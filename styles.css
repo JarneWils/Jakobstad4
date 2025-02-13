@@ -1,0 +1,178 @@
+:root {
+    --red: hsl(0, 100%, 45%);
+    --dark-grey: hsl(0, 0%, 10%);
+}
+@font-face {
+    font-family: "MijnCustomFont";
+    src: url("footage/Titling\ Gothic\ FB\ Extended\ Medium.otf") format("opentype");
+}
+
+body{
+    background-color: var(--red);
+    margin: 0;
+    overflow: hidden;
+    background-color: var(--dark-grey);
+    cursor: url("footage/cursor2.png") 20 20, auto;
+}
+
+/*
+SCREEN SAVER
+*/
+
+#screensaver {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: black; 
+    display: none;
+    z-index: 1000;
+    filter: brightness(1.1) saturate(1.2);
+}
+
+#video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.4) contrast(1.2);
+}
+.movemous {
+    display: none;
+    width: 140vw;
+    padding-top: 0.5vw;
+    height: 1.5vw;
+    background-color: var(--red);
+    color: var(--dark-grey);
+    font-family: 'MijnCustomFont', sans-serif;
+    font-size: 0.8vw;
+    position: relative;
+    animation: animation 2s linear infinite;
+}
+
+@keyframes animation {
+    0%   { transform: translateX(0vw); }
+    100% { transform: translateX(-11.5vw); }
+}
+
+
+
+.overlay{
+    width: 100vw;
+    position: fixed;
+    top: -5vh;
+    z-index: 100;
+}
+.overlay-img{
+    width: 100%;
+    height: 110vh;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+/*
+LOCATION OPTIONS
+*/
+
+.container{
+    width: 60vw;
+    margin: auto;
+    margin-top: 12.5vh;
+}
+.locations{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    justify-content: center;
+    justify-items: center;
+}
+.video{
+    width: 100%;
+    height: 35vh;
+    border-radius: 0px;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 15px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    justify-items: center;
+}
+.video:hover{
+    transition: 0.2s;
+    cursor: url("footage/cursor2.png") 20 20, auto;
+    border: 1px solid var(--red);
+}
+p{
+    width: 100%;
+    height: 20%;
+    margin-top: 0;
+    margin-bottom: -12%;
+    position: relative;
+    top: 40%;
+    color: var(--red);
+    font-family: "MijnCustomFont", sans-serif;
+    font-size: 2.5vw;
+    text-align: center;
+    z-index: 100;
+    display: none;
+}
+.video-img{
+    width: 160%;
+    margin-left: -30%;
+    margin-top: -10vh;
+    object-fit: cover;
+    filter: brightness(0.8) contrast(0.9) saturate(0);
+    transition: 0.2s;
+}
+.video-img:hover{
+    width: 150%;
+    margin-left: -25%;
+    margin-top: -8vh;
+    object-fit: cover;
+    filter: brightness(0.9) contrast(1) saturate(1.1);
+    transition: 0.3s;
+}
+
+
+/*
+VIDEO 1
+*/
+#centraal-video-container{
+    display: none;
+}
+#centraal-video{
+    width: 100%;
+}
+
+/*
+VIDEO 2
+*/
+#museum-video-container{
+    display: none;
+}
+#museum-video{
+    width: 100%;
+}
+
+/*
+VIDEO 3
+*/
+#wolf-video-container{
+    display: none;
+}
+#wolf-video{
+    width: 100%;
+}
+
+/*
+VIDEO 4
+*/
+#frituur-video-container{
+    display: none;
+}
+#frituur-video{
+    width: 100%;
+}
