@@ -1,3 +1,7 @@
+// BODY
+const body = document.querySelector('body');
+
+
 // SCREEN SAVER
 
 const saver = document.querySelector('#screensaver');
@@ -5,10 +9,11 @@ const video = document.querySelector('#video');
 video.play();
 
 // AANTAL SECONDEN VOOR SCEEN SAVER
-const timeOutCount = 1;
+const timeOutCount = 6;
 
 document.addEventListener("mousemove", () => {
     saver.style.display = "none";
+    body.style.cursor = 'url("footage/cursor2.png") 20 20, auto';
 });
 
 let inactivityTimer;
@@ -18,6 +23,7 @@ function startInactivityTimer() {
 
     inactivityTimer = setTimeout(() => {
         saver.style.display = "block";
+        body.style.cursor = 'none'
     }, timeOutCount * 1000);
 }
 
@@ -57,9 +63,12 @@ centraalStation.addEventListener('click', () => {
     centraalVideoContainer.style.display = 'block';
     centraalVideo.play()
     saver.style.opacity = 0;
+    body.style.cursor = 'none'
+
 });
 centraalVideo.addEventListener('ended', () => {
     centraalVideoContainer.style.display = 'none';
+    body.style.cursor = 'url("footage/cursor2.png") 20 20, auto';
     setTimeout(() =>{
         saver.style.opacity = 1;
     }, timeOutCount * 1000);
@@ -76,9 +85,11 @@ museum.addEventListener('click', () => {
     museumVideoContainer.style.display = 'block';
     museumVideo.play()
     saver.style.opacity = 0;
+    body.style.cursor = 'none'
 });
 museumVideo.addEventListener('ended', () => {
     museumVideoContainer.style.display = 'none';
+    body.style.cursor = 'url("footage/cursor2.png") 20 20, auto';
     setTimeout(() =>{
         saver.style.opacity = 1;
     }, timeOutCount * 1000);
@@ -94,10 +105,12 @@ const wolfVideo = document.querySelector('#wolf-video')
 wolf.addEventListener('click', () => {
     wolfVideoContainer.style.display = 'block';
     saver.style.opacity = 0;
+    body.style.cursor = 'none'
     wolfVideo.play()
 });
 wolfVideo.addEventListener('ended', () => {
     wolfVideoContainer.style.display = 'none';
+    body.style.cursor = 'url("footage/cursor2.png") 20 20, auto';
     setTimeout(() =>{
         saver.style.opacity = 1;
     }, timeOutCount * 1000);
@@ -113,10 +126,12 @@ const frituurVideo = document.querySelector('#frituur-video')
 frituur.addEventListener('click', () => {
     frituurVideoContainer.style.display = 'block';
     saver.style.opacity = 0;
+    body.style.cursor = 'none'
     frituurVideo.play()
 });
 frituurVideo.addEventListener('ended', () => {
     frituurVideoContainer.style.display = 'none';
+    body.style.cursor = 'url("footage/cursor2.png") 20 20, auto';
     setTimeout(() =>{
         saver.style.opacity = 1;
     }, timeOutCount * 1000);
